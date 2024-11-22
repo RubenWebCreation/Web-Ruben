@@ -1,0 +1,74 @@
+<!-- Ejercicios - Formularios 1 Enunciado Crea una página web que contenga un
+formulario con los siguientes campos de información: El nombre, con un controlde
+tipo texto. Los apellidos, con un control de tipo texto. El sexo, con dos
+opciones excluyentes hombre o mujer. El correo electrónico, con un control de
+tipo texto.Una casilla de verificación con el texto "Deseo recibir información
+sobre novedades y ofertas". Una casilla de verificación con el texto "Declaro
+haber leido y aceptar las condiciones generales del programa y la normativa
+sobre protección de datos". Un botón de envío. Además, tienes que tener en
+cuenta los siguientes requisitos: El título de la página debe ser Formulario de
+registro - Mi web. El método de envío del formulario debe ser GET. El destino
+del envío del formulario debe ser "". La longitud máxima de entrada de datos de
+los controles para el nombre y los apellidos debe ser 50 caracteres. La casilla
+de verificación con el texto "Deseo recibir información sobre novedades y
+ofertas" debe estar activada por defecto. Debes crear una página web que tenga
+el mismo aspecto que la imagen -->
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio Formulario</title>
+    <style>
+      div {
+        margin-top: 15px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Formulario de registro</h1>
+    <form action="#" method="get">
+      <div class="my-input">
+        <label for="nombre">Nombre:</label>
+        <input type="text" name="nombre" id="nombre" />
+      </div>
+      <div class="my-input">
+        <label for="Apellidos">Apellidos</label>
+        <input type="text" name="Apellidos" id="Apellidos" />
+      </div>
+      <!-- ------------------- -->
+      <div>
+        <label>Sexo</label>
+        <input type="radio" name="sexo" id="hombre" value="Hombre" />
+        <label>Hombre</label>
+
+        <input type="radio" name="sexo" id="mujer" value="mujer" />
+        <label>Mujer</label>
+      </div>
+      <!-- ---------------------- -->
+      <div>
+        <label for="Correo">Correo</label>
+        <input type="email" name="" id="" />
+      </div>
+      <!-- ---------------------- -->
+      <div>
+        <input type="checkbox" name="" id="" />
+        <label for="info"
+          >Deseo recibir información sobre novedades y ofertas</label
+        >
+        <div></div>
+        <input type="checkbox" name="" id="" />
+
+        <label for="info"
+          >Declaro haber leido y aceptar las condiciones generales del programa
+          y la normativa sobre proteccion de datos</label
+        >
+      </div>
+      <div>
+        <input type="submit" value="Enviar" />
+      </div>
+    </form>
+    <hr />
+    <img src="./formularios-1.png" alt="" />
+  </body>
+</html>

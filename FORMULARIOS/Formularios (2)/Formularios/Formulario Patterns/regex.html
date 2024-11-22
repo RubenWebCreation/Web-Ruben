@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- CHAT GTP TE SOLUCIONA TODO EL PATTERN -->
+    <h1>Validacion html con atributo pattern</h1>
+    <form action="">
+      <label for="nombre">Nombre:</label>
+      <input
+        type="text"
+        id="nombre"
+        name="nombre"
+        required
+        title="El nombre solo puede contener letras y espacios. Entre 4 y 10 Caracteres"
+        pattern="^[a-zA-ZÁ-y\s]+$"
+        maxlength="10"
+        minlength="2"
+      />
+      <br />
+      <!-- Telefono
+       (+34) sea opcional 
+       Seguid de 9 Digitos
+       -->
+       <label for="telf">Telefono</label>
+       <input type="text"
+       id="telf"
+       name="telf"
+       required
+       title="El Numero debe tener 9 digitos, opcionalmente precicido por +34"
+       pattern="^(\+34\s?)?[6789]\d(8)$">
+       <!-- Contraseña de minimo 8 caracteres, una mayus , un numero y un caracter especial -->
+
+       <label for="cont">Contraseña</label>
+       <input type="cont"
+       id="cont"
+       name="cont"
+       required
+       pattern="^(?=.*[A-Z])(?0.*[a-z])(?=.*\d)(?=.*[\W_]).{8,}$">
+        title="La Contraseña dede tener al menos 8 caracteres, incluyendo una mayuscula, una minuscula, un numero y un caracter especial"
+      <input type="submit" />
+    </form>
+  </body>
+</html>

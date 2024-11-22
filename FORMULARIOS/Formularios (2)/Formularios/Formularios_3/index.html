@@ -1,0 +1,102 @@
+<!-- Ejercicios - Formularios (HTML5) Enunciado Crea una página web que contenga un
+formulario con los siguientes campos de información: Nombre, con un control de
+tipo texto obligatorio y con autofoco. Correo electrónico, con un control de
+tipo email obligatorio. URL, con un control de tipo url que muestre la ayuda
+"Escribe la URL de tu página web personal". Fecha, con un control de tipo date.
+Tiempo, con un control de tipo time. Fecha y hora, con un control de tipo
+datetime. Mes, con un control de tipo month. Semana, con un control de tipo
+week. Número, con un control de tipo number que limite la entrada a un valor
+entre -10 y 10. Teléfono, con un control de tipo tel. Término de búsqueda, con
+un control de tipo search. Color favorito, con un control de tipo color. Un
+botón de envío. Además, tienes que tener en cuenta los siguientes requisitos: El
+título de la página debe ser Formulario de prueba de HTML5. El método de envío
+del formulario debe ser GET. El destino del envío del formulario debe ser "".
+Nota: si al validar el código HTML de tu página web con el validador del W3C se
+muestran mensajes de advertencia como The date input type is not supported in
+all browsers. Please be sure to test, and consider using a polyfill. no te
+preocupes, el validador te está avisando de que lleves cuidado al usar una
+característica de HTML5 que no está admitida por todos los navegadores actuales.
+Nota: por lo anterior, cuando realices esta actividad y compruebes cómo se
+visualiza tu página web en distintos navegadores es muy probable que obtengas
+diferentes resultados. -->
+<!-- ------------------------------------------------------------- -->
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio Formulario</title>
+    <style>
+      div {
+        margin-top: 15px;
+      }
+    </style>
+  </head>
+  <body>
+    <form action="#" method="get">
+    <div>
+      <label>Nombre:</label>
+      <input type="text" name="">
+    </div>
+
+    <div>
+      <label>Correo Electronico:</label>
+      <input type="email" name="">
+    </div>
+
+    <div>
+      <label>URL:</label>
+      <input type="url" name="Url" placeholder="Escribe la Url de tu Paguina">
+    </div>
+
+    <div>
+      <label>Fecha</label>
+      <input type="date" name="">
+    </div>
+
+    <div>
+      <label>Tiempo</label>
+      <input type="time" name="">
+    </div>
+
+    <div>
+      <label>Fecha y Hora.</label>
+      <input type="datetime-local" name="">
+    </div>
+
+    <div>
+      <label>Mes:</label>
+      <input type="month" name="">
+    </div>
+
+    <div>
+      <label>Semana</label>
+      <input type="week" name="">
+    </div>
+
+    <div>
+      <label>Munero (min -10, max 10):</label>
+      <input type="number" name="number" min="-10" max="10">
+    </div>
+
+    <div>
+      <label>Telefono</label>
+      <input type="tel" name="">
+    </div>
+
+    <div>
+      <label>Termino de busqueda:</label>
+      <input type="search" name="">
+    </div>
+
+    <div>
+      <label>Color Favorito:</label>
+      <input type="color" name="">
+    </div>
+
+   <div><label for=""></label>
+    <input type="submit" name="" id="">
+  </div>
+</form>
+  </body>
+</html>
