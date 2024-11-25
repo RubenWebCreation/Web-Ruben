@@ -249,43 +249,32 @@
         <div class="my-input">
           <p>A QUE BANDO TE UNIRAS?</p>
 
-          <input
-            type="radio"
-            name="ejercito"
-            id="tarta-queso"
-            value="tarta de queso"
-          />
-          <label for="Tarta-queso">EL CROMO</label>
+          <input type="radio" name="ejercito" id="cromo" value="cromo" />
+          <label for="cromo">EL CROMO</label>
         </div>
 
-        <input type="radio" name="ejercito" id="tiramisu" value="tiramisu" />
-        <label for="tiramisu">CAMINANTES DEL PARALELO</label>
+        <input type="radio" name="ejercito" id="cubos" value="cubos" />
+        <label for="cubos">CAMINANTES DEL PARALELO</label>
         <br />
 
-        <input type="radio" name="ejercito" id="Helado" value="Helado" />
-        <label for="helado">LOS KYMERA</label>
-        <br />
-        <input
-          type="radio"
-          name="ejercito"
-          id="ninguno"
-          value="ninguno"
-          checked
-        />
+        <input type="radio" name="ejercito" id="aliens" value="aliens" />
+        <label for="aliens">LOS KYMERA</label>
 
-        <!-- Textos mas largos -->
-        <label for="descripcion">ESCRIBE POR QUE TE QUIERES UNIR</label>
-
-        <textarea
-          cols="40"
-          rows="20"
-          name="descripcion"
-          id="descripcion"
-          placeholder="Texto Interior..."
-        ></textarea>
-        <br />
+        <div class="my-input">
+          <label for="descripcion">DINOS POR QUE QUE TE QUIERES UNIR?</label>
+          <br/>
+          <textarea
+            cols="40"
+            rows="20"
+            name="descripcion"
+            id="descripcion"
+            placeholder="..."
+          ></textarea>
+        </div>
+        <input type="submit" id="enviar" class="btn" />
       </form>
     </div>
+
     <footer>
       <p>KH85 &copy; 2024, todos los derechos reservados</p>
     </footer>

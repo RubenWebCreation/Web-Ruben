@@ -48,16 +48,17 @@ img{
     color: #f7c08a;
 }
 .btn{
+
     display: inline-block;
-    background-color: #333;
-    color: #fff;
+    background-color: #2d004b;
+    color: #8c00ff;
     padding: 10px 20px;
-    border-radius: 5px;
+    border-radius: 10px;
     margin-top: 10px;
 }
 .btn:hover{
-    background-color: #ffffff;
-    color: #631e69;
+    background-color: #c300ff;
+    color: #ffffff;
 }
 /* colores para reutilizar */
 .bg-dark{
@@ -150,7 +151,7 @@ padding: 30px;
 }
 
 #cabezado .cabecera{
-    height: 70vh;
+    height: 50vh;
     padding: 110px;
     text-align: center;
     align-content: flex-start;
@@ -250,12 +251,14 @@ align-content: center;
 background: url(../images/cunadelcubo.png) no-repeat top center/cover;
 }
 .lideres-jefes{
+
     border-top: #ffd90080 solid 5px;
     background-color: #000000b0;
     height: 100vh;
 }#facciones {
     flex: 2;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
+    align-content: center;
     display: flex;
     padding: 50px;
     background-color: #6b19a1c4;
@@ -305,14 +308,32 @@ align-content: center;
     background: url(../images/Gold_Rift_Opening_-_The_End_-_Fortnite.gif) no-repeat center center/cover;
 }
 form {
+font-size: 2rem;
+background-color: #00000079;
+margin: auto;
+}
+#nombre{
+    background-color: #333;
+    padding: 10px;
+    display: flex;
+}
 
+#descripcion{
+    background-color: #333;
+    display: flex;
 }
 #Unete label,p{
     padding-top: 10px;
-    color: #f7cb6c;
+    color: #ffffff;
     font-size: 1.5rem;
 }
-@media only screen and (max-width: 768px) {
+ #enviar{
+    height: 50px;
+    width: 100px;
+    font-size: x-large;
+    
+}
+/* @media only screen and (max-width: 768px) {
     #showcase{
      height: 100vh;
     }
@@ -337,4 +358,4 @@ form {
         background: url(../img/photo-1.jpg) no-repeat    center center/cover;
         flex: 0 1 auto;
     }
-}
+} */
