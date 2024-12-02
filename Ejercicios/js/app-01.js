@@ -14,35 +14,35 @@
 // }
 
 //Generar Numero aleatorio
- const secretNumber = Math.floor(Math.random() * 100) + 1;
-//Inicializar Variables
-const maxIntentos = 6
-let intentos = 0
-let acierto = false
-//Miramos si se cumple la condicion
-//jugar mientras no hemos acertado? y tenemos intentos
-while (intentos < maxIntentos && !acierto){
-let numeroJugador = parseInt(prompt("Introduce un numero entre 1 y 100"))
+//  const secretNumber = Math.floor(Math.random() * 100) + 1;
+// //Inicializar Variables
+// const maxIntentos = 6
+// let intentos = 0
+// let acierto = false
+// //Miramos si se cumple la condicion
+// //jugar mientras no hemos acertado? y tenemos intentos
+// while (intentos < maxIntentos && !acierto){
+// let numeroJugador = parseInt(prompt("Introduce un numero entre 1 y 100"))
 
- //Si no acierta damos ayuda al jugador de si es mayor o menor
- //Si acierta ha ganado
- if(numeroJugador === secretNumber){
-    acierto = true
- }else if (numeroJugador < secretNumber){
-    alert("No llegas")
- }else{
-    alert("Te Pasaste")
- }
- //Incrementamos al numero de intentos
- intentos++
-}
- //Mostramos haz ganado si ha acertado
- //Mostramos haz perdido
- if (acierto){
-    alert("Haz ganado el numero era " + secretNumber)
- }else{
-    alert("Haz Perdido el numero era " + secretNumber)  
- }
+//  //Si no acierta damos ayuda al jugador de si es mayor o menor
+//  //Si acierta ha ganado
+//  if(numeroJugador === secretNumber){
+//     acierto = true
+//  }else if (numeroJugador < secretNumber){
+//     alert("No llegas")
+//  }else{
+//     alert("Te Pasaste")
+//  }
+//  //Incrementamos al numero de intentos
+//  intentos++
+// }
+//  //Mostramos haz ganado si ha acertado
+//  //Mostramos haz perdido
+//  if (acierto){
+//     alert("Haz ganado el numero era " + secretNumber)
+//  }else{
+//     alert("Haz Perdido el numero era " + secretNumber)  
+//  }
 
 // --------------------------------------------
 
@@ -119,5 +119,71 @@ let numeroJugador = parseInt(prompt("Introduce un numero entre 1 y 100"))
 //     alert("Impar")
 // }
 //-------------------------------------------------------------
+// Ejercicio 9
+// ---------------------------------------------------
+// let frase = prompt("Escribe una frase:");
 
-//Ejercicio 9
+// let contador = 0;
+
+// for (let i = 0; i < frase.length; i++) {
+//     if (frase[i].toLowerCase() === 'a') {
+//         contador++;
+//     }
+// }
+// alert(`La letra "a" aparece ${contador} veces en la frase.`);
+// --------------------------------------------------
+// EXPLICACION
+// let frase = prompt("Escribe una frase:");
+
+// let numAes = 0;
+
+// for (let i = 0; i < frase.length; i++) {
+//    const letra = frase[i]
+//     if ( letra === 'a') {
+//         numAes++;
+//     }
+// }
+// alert(`La letra "a" aparece ${numAes} veces en la frase.`);
+// --------------------------------------------------
+// Ejercicio 10
+// ---------------------------------------------------
+// let frase = prompt("Escribe una frase:");
+
+// let vocales = 0;
+
+// for (let i = 0; i < frase.length; i++)
+//     if (frase[i].toLowerCase() === 'a') {
+//       vocales++;
+//     }
+//     //switchcase
+//   switch (letra) {
+//     case "a":
+//     case "e":
+//     case "i":
+//     case "o":
+//     case "u":
+//       vocales
+//       break;
+//   }
+// alert(`Las vocales "a,e,i,o,u" aparecen ${vocales} veces en la frase.`);
+// -----------------------------------------------
+// let frase = prompt("Escribe una frase:");
+// let NumVocales = 0;
+// const vocales = "AEIOUaeiou"
+
+// for (let j = 0; j < frase.length; j++) {
+//   for (let j = 0; j < frase.length; j++){
+//     if (frase[1] === vocales [j]) {
+//       NumVocales++
+//       break
+//     }
+//   }
+// }
+// alert(`Las vocales "a,e,i,o,u" aparecen ${NumVocales} veces en la frase.`);
+// --------------------------------------------------------
+const expVocal = /[aeiouAEIOU]/
+for (let i = 0; i < frase.length; i++) {
+  if(expVocal.test(frase[i])){
+  numVocales++
+  }
+}

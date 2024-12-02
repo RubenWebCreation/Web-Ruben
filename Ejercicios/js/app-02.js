@@ -16,16 +16,3 @@
 
 // if(!intentos) alert("Has perdido")
    // --------------------------------------------------------
-
-// Ejercicio Calculadora
-
-let num1 = prompt("Primer Numero");
-let num2 = prompt("Segundo Numero");
-let resultado;
-
-alert(resultado = num1 + num2);
-alert(resultado = num1 - num2);
-alert(resultado = num1 * num2);
-alert(resultado = num1 / num2);
-
-console.log1(resultado)
