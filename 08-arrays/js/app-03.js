@@ -14,6 +14,13 @@ frutas[0] = "fresa"
 frutas[frutas.length]= ["piña","melon"]
 frutas[frutas.length]= "cacahuetes"
 
-frutas.unshift("Sandia")
-console.log(frutas)
-console.log(typeof frutas)
+let verdura= "col"
+verdura = "patata"
+let verduraPreferida = verdura
+
+console.log("verdura vale", verdura)
+console.log("preferida vale", verduraPreferida)
+
+const deportes =("futbol","padel","baloncesto")
+const deportesFavoritos = deportes //No podemos copiar arrays directamente
+deportesFavoritos[0] ="golf"
