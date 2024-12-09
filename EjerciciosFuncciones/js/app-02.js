@@ -65,29 +65,44 @@ console.log(minusToMayus(deportes)) //["FUTBOL"]
 //---------------------------------------------------------------
 //5. Crea una función que reciba un número y devuelva true si es primo, y false en caso contrario
 //---------------------------------------------------------------
-function name(params) {
-    
+function esPrimo(num) {
+    if (num <= 1) {
+    return false    
+    }
+     for (let i = 2; i < num; i++) {
+        if (num % i === 0) {
+        return false    
+        }
+        
+     }
+     return true
 }
-
-
-
 
 //---------------------------------------------------------------
 //6. Crea una función que reciba dos arrays y devuelva un nuevo array que contenga los elementos comunes entre ambos
 //---------------------------------------------------------------
-function name(params) {
-    
+function getComunes(arrA, arrB) {
+    //resolver con num for y el metodo includes
+   const comunes =[]
+   //aqui for
+   for (let i = 0; i < arrA.length; i++) {
+    const element1 = arrA[i];
+    if (arrB.includes(element1)) {
+     comunes.push(element1)   
+    }
+   }
+   return comunes
 }
 
+const a = [2,3,5,7]
+const b = [3,6,9,5]
+getComunes(a,b)//Deberia devolver [3,5]
 
 
 
 //---------------------------------------------------------------
 //7. Crea una función que reciba un array de números y devuelva la suma de todos los números pares
 //---------------------------------------------------------------
-function name(params) {
-    
-}
 
 
 
@@ -125,10 +140,19 @@ return text.split(" ").reverse().join(" ")
 //---------------------------------------------------------------
 //10. Crea una función que calcule el factorial de un número dado
 //---------------------------------------------------------------
-function name(params) {
-    
+debugger;
+function factorial(n) {
+   //el factorial 0 o 1 es 1
+   if (n === 0 || n === 1) {
+    return 1;
+   } 
+   return n * factorial(n - 1);
 }
 
+function saluda() {
+console.log("Feliz Navidad")
+saluda()
+}
 
 
 
