@@ -36,17 +36,17 @@
 //Lo mismo pero con arrow funtion
 // const numsPares2 = nums2.filter((n) => n % 2 === 0);
 
-const empresas = [
-  { name: "Financiera Alpha", category: "Finanzas", start: 1981, end: 2004 },
-  { name: "Tienda Beta", category: "Minorista", start: 1992, end: 2008 },
-  { name: "Motores Gamma", category: "Automoción", start: 1999, end: 2007 },
-  { name: "Retail Delta", category: "Minorista", start: 1989, end: 2010 },
-  { name: "Tecno Epsilon", category: "Tecnología", start: 2009, end: 2014 },
-  { name: "Inversiones Zeta", category: "Finanzas", start: 1987, end: 2010 },
-  { name: "Autos Omega", category: "Automoción", start: 1986, end: 1996 },
-  { name: "Innovación Sigma", category: "Tecnología", start: 2011, end: 2016 },
-  { name: "Market Kappa", category: "Minorista", start: 1981, end: 1989 },
-];
+// const empresas = [
+//   { name: "Financiera Alpha", category: "Finanzas", start: 1981, end: 2004 },
+//   { name: "Tienda Beta", category: "Minorista", start: 1992, end: 2008 },
+//   { name: "Motores Gamma", category: "Automoción", start: 1999, end: 2007 },
+//   { name: "Retail Delta", category: "Minorista", start: 1989, end: 2010 },
+//   { name: "Tecno Epsilon", category: "Tecnología", start: 2009, end: 2014 },
+//   { name: "Inversiones Zeta", category: "Finanzas", start: 1987, end: 2010 },
+//   { name: "Autos Omega", category: "Automoción", start: 1986, end: 1996 },
+//   { name: "Innovación Sigma", category: "Tecnología", start: 2011, end: 2016 },
+//   { name: "Market Kappa", category: "Minorista", start: 1981, end: 1989 },
+// ];
 //-------------------------------------------------
 // //Obtener solo la empresa Minorista
 // const Minorista = empresas.filter((empres) => {
@@ -58,16 +58,16 @@ const empresas = [
 // }
 // -------------------------------------------------
 //Crear un array nuevo con solo las empresas Minorista (flter)
-const minoristas = empresas.filter((emp) => {
-  return empresas.category === "Minorista";
-});
-console.log(minoristas);
-// -------------------------------------------------------------
-//Obtener las empresas que empezaron en 1980 o despues y cerraron en 2005 o antes
-const empresas1 = empresas.filter((empresa) => {
-  return empresa.start >= 1980 && empresa.end <= 2005;
-});
-console.log(empresas1);
+// const minoristas = empresas.filter((emp) => {
+//   return empresas.category === "Minorista";
+// });
+// console.log(minoristas);
+// // -------------------------------------------------------------
+// //Obtener las empresas que empezaron en 1980 o despues y cerraron en 2005 o antes
+// const empresas1 = empresas.filter((empresa) => {
+//   return empresa.start >= 1980 && empresa.end <= 2005;
+// });
+// console.log(empresas1);
 
 // -------------------------------------------------------------
 // empresas.miFilter = function (callback) {
@@ -79,3 +79,34 @@ console.log(empresas1);
 //   }
 //   return array;
 // };
+// -----------------------------------------------------------------
+const raiz = nums.map((num) => {
+  return Math.sqrt(num);
+});
+
+const doble = raiz.map((num) => {
+  return num * 2;
+});
+
+const raizYdoble = num.map((num) => Math.sqrt(num)).map((num) => num * 2);
+console.log(raizYdoble);
+
+const paresDobles = nums.filter((num) => num % 2 === 0).map((num) => num * 2);
+
+const saludar = function (nombre) {
+  return "Hola " + nombre;
+};
+
+console.log(saludar("Santa Claus"));
+console.log(saludar2("Santa Claus"));
+
+// -----------------------------------------------------------------
+
+const texto = "Feliz Navidad"(
+  //IIFE
+  function (_texto) {
+    const texto = _texto;
+    console.log(texto);
+  }
+)("Hola soy una Funcion IIFE");
+// -----------------------------------------------------------------
