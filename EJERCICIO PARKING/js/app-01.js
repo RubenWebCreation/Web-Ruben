@@ -1,4 +1,4 @@
-class vehiculo {
+class Vehiculo {
   constructor(matricula, horaEntrada) {
     this.matricula = matricula;
     this.horaEntrada = horaEntrada;
@@ -6,7 +6,8 @@ class vehiculo {
 }
 
 class Plaza {
-  constructor(numero) {
+  constructor(zona, numero) {
+    this.zona = zona;
     this.numero = numero;
     this.ocupada = false;
   }
@@ -19,26 +20,92 @@ class Plaza {
 }
 
 class Parking {
-  constructor(totalPlazas, precioPorHora = i) {
-    this.plazas = [{ numero: 1, ocupado: false }, new Plaza(2)];
+  constructor(totalPlazas, precioPorHora = 1) {
+    this.plazas = [];
     this.precioPorHora = precioPorHora;
-    this.vehiculo = new Map();
+    this.vehiculos = new Map();
 
-    //Crear Plazas Parking
-    for (let i = 0; i < totalPlazas; i++) {
-      this.plazas.push(new Plaza(i));
+    //crear las plazas del parking
+    for (let i = 1; i <= totalPlazas; i++) {
+      //TODO plazas pares zona B impares zona A
+      let letra = "A";
+      if (i % 2 === 0) {
+        letra = "B";
+      }
+      const newPlaza = new Plaza(letra, i);
+      this.plazas.push(newPlaza);
     }
   }
-  regristarVehiculo(matricula) {
+  registrarVehiculo(matricula) {
+    //La matricula no puede repetirse
+    if (this.vehiculos.has(matricula)) {
+      console.log(`La matricula ${matricula} ya está registrada`);
+      return; //if else vs early return salimos del método
+    }
     //Buscar plaza libre
-    const plazLibre = this.plazas.find((Plaza) => !this.plazas.ocupada);
-    //Si no hay plazas no se puede aparcar
-
+    const plazaLibre = this.plazas.find((plaza) => !plaza.ocupada);
+    //Sin hay plazas no se puede aparcar
+    if (!plazaLibre) {
+      console.log(`El parking está lleno!!`);
+      return; //salimos del método
+    }
+    //Creamos un registro del vehiculo con la hora de entrada
     const horaEntrada = new Date();
     const vehiculo = new Vehiculo(matricula, horaEntrada);
+    plazaLibre.ocupar(); //maracamos la plaza como ocupada
 
-    this.vehiculos.set(matricula, { vehiculo: vehiculo, plaza: plazLibre });
-    plazLibre.ocupada();
+    //Añadimos el registro a la lista de vehiculos del parking
+    this.vehiculos.set(matricula, { vehiculo, plaza: plazaLibre });
+    console.log(
+      `Vehículo ${vehiculo.matricula} registrado en la plaza ${
+        plazaLibre.zona + plazaLibre.numero
+      }`
+    );
+  }
+  generarTicket(matricula) {
+    //TODO cambiar la clave de identificaíon de entrada unica de matricula a un UUID
+    const registro = this.vehiculos.get(matricula);
+    if (!registro) {
+      console.log(`No hay ningun registro con la matricula ${matricula}`);
+      return;
+    }
+    //Registrar hora de salida
+    console.log(registro);
+    const { vehiculo, plaza } = registro; //usamos desestructuración
+    //calcular importe
+    const horaSalida = new Date();
+    const coste = this.calcularCoste(vehiculo.horaEntrada, horaSalida);
+    //Liberar el registro de la plaza
+    plaza.liberar();
+    this.vehiculos.delete(matricula);
+    //Imprimir el tiket
+    console.log("============ TIQUET ===========");
+    console.log(`Matricula: ${vehiculo.matricula}`);
+    console.log(`Plaza: ${plaza.zona + plaza.numero}`);
+    console.log(`Hora de entrada: ${vehiculo.horaEntrada.toLocaleString()}`);
+    console.log(`Hora de salida: ${horaSalida.toLocaleString()}`);
+    console.log(`Coste total: ${coste}`);
+    console.log("=================================");
+  }
+  calcularCoste(horaEntrada, horaSalida) {
+    //restar las fechas y multiplicar por precioPorHora
+    const tiempoEstacionado = (horaSalida - horaEntrada) / (1000 * 60 * 60);
+    return (tiempoEstacionado * this.precioPorHora).toFixed(2);
   }
 }
-const parking = new Parking(10, 6);
+
+const parking = new Parking(4, 6);
+
+/**
+ *
+ *
+ * zona testing
+ */
+//Funcion para cargar vehiculos en el parking
+function registroVehiculos() {
+  const matriculas = ["1224ABC", "11455AA", "22211kBB"];
+  for (let m of matriculas) {
+    parking.registrarVehiculo(m);
+  }
+}
+registroVehiculos();
