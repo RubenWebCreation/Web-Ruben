@@ -53,8 +53,8 @@
     <script>
       const now = new Date();
       const hours = now.getHours().toString().padStart();
-      const minutes = now.getMinutes();
-      const seconds = now.getSeconds();
+      const minutes = now.getMinutes.toString().padStart()();
+      const seconds = now.getSeconds.toString().padStart()();
 
       //Nos Traemos una referencia de los elements que nesesitamos modificar
       const hour1 = document.getElementById("hour1");
@@ -66,10 +66,8 @@
 
       hour1.textContent = hours[0];
       hour2.textContent = hours[1];
-
       minute1.textContent = minutes[0];
       minute2.textContent = minutes[1];
-
       second1.textContent = seconds[0];
       second2.textContent = seconds[1];
     </script>
