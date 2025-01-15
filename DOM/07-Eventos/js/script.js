@@ -2,32 +2,33 @@ function getKeyCodeInnerHTML(e) {
   console.log(e);
   const insertDiv = document.querySelector("#insert");
   insertDiv.innerHTML = `<div class="key">${e.key === " " ? "Espacio" : e.key}
-                                    <small>e.key</small>
-                            </div>
-                            <div class="key">${e.keyCode}
-                                    <small>e.keyCode</small>
-                            </div>
-                            <div class="key">${e.code}
-                                    <small>e.code</small>
-                            </div>`;
+                                  <small>e.key</small>
+                          </div>
+                          <div class="key">${e.keyCode}
+                                  <small>e.keyCode</small>
+                          </div>
+                          <div class="key">${e.code}
+                                  <small>e.code</small>
+                          </div>`;
 }
 function getKeyCodeCreateNodes(e) {
   //TODO obtener la mima funcionalidad que la funcion anterior
   //pero usando createElement, createTextNode y appendChild
-  //Sin innerHTML
+  //Sin innerHtml
   const insertDiv = document.querySelector("#insert");
   insertDiv.textContent = "";
 
-  const keyCodeArr = [
+  const keyCodesArr = [
     { name: "e.key", evento: e.key },
     { name: "e.keyCode", evento: e.keyCode },
     { name: "e.code", evento: e.code },
   ];
 
-  keyCodeArr.forEach((keyInfo) => {
+  keyCodesArr.forEach((keyInfo) => {
     const div = createDiv(keyInfo.name, keyInfo.evento);
     insertDiv.appendChild(div);
   });
+
   //   const keyCodes = {
   //     "e.key": e.key,
   //     "e.keyCode": e.keyCode,
@@ -35,7 +36,7 @@ function getKeyCodeCreateNodes(e) {
   //   };
 
   //   for (let key in keyCodes) {
-  //     const div = createDiv(key, keyCodes["key"]);
+  //     const div = createDiv(key, keyCodes[key]);
   //     insertDiv.appendChild(div);
   //   }
 }
