@@ -1,0 +1,26 @@
+[
+    {
+        "titulo": "EL NOMBRE DE LA ROSA",
+        "autor": "Umberto Eco",
+        "imagen": "images/libros/libro1.jpg",
+        "leido": true
+    },
+    {
+        "titulo": "EL SEÑOR DE LOS ANILLOS",
+        "autor": "J.R.R.TOLKIEN",
+        "imagen": "images/libros/libro2.jpg",
+        "leido": false
+    },
+    {
+        "titulo": "ELINGENIOSO HIDALGO DON QUIXOTE DE LA MANCHA",
+        "autor": "Miguel de Cervantes",
+        "imagen": "images/libros/libro3.png",
+        "leido": true
+    },
+    {
+        "titulo": "EL CAMINO",
+        "autor": "Miguel Delibes",
+        "imagen": "images/libros/libro4.jpg",
+        "leido": false
+    }
+]

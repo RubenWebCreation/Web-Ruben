@@ -9,7 +9,7 @@ const persona = {
 for (let prop in persona) {
   console.log(`propiedad:${prop} es${persona[prop]}`);
 }
- //for of
+ for of
  const cars = ["BMW","Volvo","Mini"]
  (let i = 0; i < cars.lenght; i++){
   const car = cars
