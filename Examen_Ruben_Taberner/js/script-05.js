@@ -1,3 +1,4 @@
+// Agregar estilos a la página.
 function agregarEstilos() {
   const style = document.createElement("style");
   style.innerHTML = `
@@ -16,9 +17,8 @@ function agregarEstilos() {
       `;
   document.head.appendChild(style);
 }
-//Funcion para mostrar si se a leido y no a los libros
-//-------------------------------------------------------------
 
+// Función para mostrar los libros en el contenedor.
 function mostrarLibros(libros) {
   const container = document.getElementById("libros-container");
   libros.forEach((libro) => {
@@ -29,19 +29,41 @@ function mostrarLibros(libros) {
                   <p>Autor: ${libro.autor}</p>
                   <img src="${libro.imagen}" alt="${libro.titulo}" width="100">
               `;
+    div.setAttribute("data-leido", libro.leido);
     container.appendChild(div);
   });
 }
-//------------------------------------------------------------
+
+// Función para cargar los libros desde un archivo JSON.
 async function cargarLibros() {
   try {
-    const response = await fetch("libros.json");
+    const response = await fetch("json/libros.json");
     const libros = await response.json();
+    console.log(libros);
+
     mostrarLibros(libros);
   } catch (error) {
     console.error("Error al cargar los libros:", error);
   }
 }
 
+// Evento para alternar el estado de lectura al hacer clic en un libro
+function agregarEventoCambioEstado() {
+  const container = document.getElementById("libros-container");
+  container.addEventListener("click", (event) => {
+    const libro = event.target.closest(".libro");
+    if (libro) {
+      const leido = libro.getAttribute("data-leido") === "true";
+      libro.setAttribute("data-leido", !leido);
+      libro.classList.toggle("leido", !leido);
+      libro.classList.toggle("no-leido", leido);
+      console.log(
+        `El libro ahora está marcado como ${!leido ? "leído" : "no leído"}.`
+      );
+    }
+  });
+}
+
 agregarEstilos();
 cargarLibros();
+agregarEventoCambioEstado();
